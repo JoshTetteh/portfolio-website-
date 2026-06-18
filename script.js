@@ -82,17 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
             
             const showSuccess = () => {
-                const formContainer = document.querySelector('.contact-form-container');
-                formContainer.innerHTML = `
-                    <div style="text-align: center; padding: 2rem 0; animation: fadeIn 0.5s ease;">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" style="margin-bottom: 1.5rem; display: inline-block;">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem;">Thank you!</h3>
-                        <p style="color: var(--text-secondary); font-weight: 300;">Your strategic audit request has been sent. I will review your details and reach out within 24 hours.</p>
-                    </div>
-                `;
+                contactForm.reset();
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                
+                // Remove existing status message if any
+                const existingMsg = contactForm.querySelector('.form-status-msg');
+                if (existingMsg) existingMsg.remove();
+                
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'form-status-msg';
+                msgDiv.style.marginTop = '1.5rem';
+                msgDiv.style.color = 'var(--sage)';
+                msgDiv.style.fontSize = '0.95rem';
+                msgDiv.style.textAlign = 'center';
+                msgDiv.style.fontWeight = '400';
+                msgDiv.style.animation = 'fadeIn 0.5s ease';
+                msgDiv.textContent = 'Thank you! Your request has been sent. I will get back to you within 24 hours.';
+                
+                contactForm.appendChild(msgDiv);
+                
+                setTimeout(() => {
+                    msgDiv.remove();
+                }, 8000);
             };
             
             if (isLocal) {
