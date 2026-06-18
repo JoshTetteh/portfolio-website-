@@ -26,6 +26,26 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Accessibility skip link */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 1rem;
+    background: var(--taupe);
+    color: var(--bg-white);
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    transition: top 0.2s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -194,6 +214,13 @@ p {
     margin-bottom: 2rem;
 }
 
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
 .hero-actions {
     display: flex;
     gap: 1rem;
@@ -296,6 +323,11 @@ p {
 
 .service-card p {
     font-size: 0.9rem;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 /* About Section */
@@ -409,6 +441,29 @@ p {
 /* Contact Form Styling */
 .contact-section {
     border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+.contact-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.contact-details {
+    font-size: 1.05rem;
+    line-height: 2.2;
+    margin-bottom: 2rem;
+}
+
+.contact-details a {
+    color: var(--taupe);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+    color: var(--taupe-light);
+    text-decoration: underline;
 }
 
 .contact-form-container {
