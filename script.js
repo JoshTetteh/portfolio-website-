@@ -78,8 +78,18 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
             
-            // Check if we are running locally
-            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            // Check if we are running locally (localhost, local IP, file protocol, or development port)
+            const isLocal = 
+                window.location.hostname === 'localhost' || 
+                window.location.hostname === '127.0.0.1' || 
+                window.location.hostname === '0.0.0.0' || 
+                window.location.hostname === '[::1]' ||
+                window.location.protocol === 'file:' ||
+                window.location.hostname.endsWith('.local') ||
+                window.location.hostname.startsWith('192.168.') ||
+                window.location.hostname.startsWith('10.') ||
+                window.location.hostname.startsWith('172.') ||
+                (window.location.port && window.location.port !== '80' && window.location.port !== '443');
             
             const showSuccess = () => {
                 contactForm.reset();
@@ -109,12 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (isLocal) {
                 // Simulate local submission success after a brief delay
+                console.log('Form submission simulated (local development environment):', Object.fromEntries(formData));
                 setTimeout(() => {
                     showSuccess();
                 }, 1000);
             } else {
                 // Production submission to Netlify Forms
-                fetch('/', {
+                fetch(window.location.pathname, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams(formData).toString()
