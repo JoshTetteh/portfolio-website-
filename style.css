@@ -406,6 +406,54 @@ p {
     color: var(--text-muted);
 }
 
+/* Contact Form Styling */
+.contact-section {
+    border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+.contact-form-container {
+    background: var(--bg-white);
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--bg-light-gray);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--taupe);
+    background-color: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(166, 138, 109, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
