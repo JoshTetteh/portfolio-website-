@@ -28,34 +28,105 @@
     <meta name="twitter:image" content="https://joshtetteh.github.io/portfolio-website-/og-image.png">
 
     <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Person",
-      "name": "Joshua Tetteh",
-      "jobTitle": "AI Consultant & Data Strategist",
-      "url": "https://joshtetteh.github.io/portfolio-website-/",
-      "image": "https://joshtetteh.github.io/portfolio-website-/BCS04658.jpg",
-      "description": "AI Consultant and Data Strategist specializing in semantic memory systems and automated enterprise solutions.",
-      "sameAs": [
-        "https://www.linkedin.com/in/joshuatetteh/",
-        "https://github.com/joshtetteh"
-      ],
-      "email": "mailto:joshtetteh30@gmail.com",
-      "telephone": "+233552853723",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Accra",
-        "addressCountry": "GH"
+    [
+      {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Joshua Tetteh",
+        "jobTitle": "AI Consultant & Data Strategist",
+        "url": "https://joshtetteh.github.io/portfolio-website-/",
+        "image": "https://joshtetteh.github.io/portfolio-website-/BCS04658.jpg",
+        "description": "AI Consultant and Data Strategist specializing in semantic memory systems and automated enterprise solutions.",
+        "sameAs": [
+          "https://www.linkedin.com/in/joshuatetteh/",
+          "https://github.com/joshtetteh"
+        ],
+        "email": "mailto:joshtetteh30@gmail.com",
+        "telephone": "+233552853723",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Accra",
+          "addressCountry": "GH"
+        },
+        "knowsAbout": [
+          "Artificial Intelligence", 
+          "Data Strategy", 
+          "Data Engineering", 
+          "Monitoring & Evaluation", 
+          "Public Health AI"
+        ]
       },
-      "knowsAbout": [
-        "Artificial Intelligence", 
-        "Data Strategy", 
-        "Data Engineering", 
-        "Monitoring & Evaluation", 
-        "Public Health AI"
-      ]
-    }
+      {
+        "@context": "https://schema.org/",
+        "@type": "ProfessionalService",
+        "@id": "https://joshtetteh.github.io/portfolio-website-/#service",
+        "name": "Joshua Tetteh - AI & Data Strategy Consulting",
+        "image": "https://joshtetteh.github.io/portfolio-website-/BCS04658.jpg",
+        "url": "https://joshtetteh.github.io/portfolio-website-/",
+        "telephone": "+233552853723",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Accra",
+          "addressLocality": "Accra",
+          "addressRegion": "Greater Accra",
+          "addressCountry": "GH"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 5.6037,
+          "longitude": -0.1870
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/joshuatetteh/",
+          "https://github.com/joshtetteh"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does an AI Consultant & Data Strategist actually do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "I design and implement custom data pipelines and automation systems that connect legacy databases to custom LLM and machine learning applications, eliminating manual reporting and translating raw data into business metrics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can automated reporting reduce utility or planning cycles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By automating the data collection, cleansing, and visualization processes, planning cycles that traditionally take 3 months are shortened to 1 month, providing decision makers with real-time dashboards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is semantic memory and how does it benefit my business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Semantic memory systems store organizational context and records in a vector database, allowing AI agents to retrieve information and assist with complex tasks like grant identification or proposal generation with high accuracy."
+            }
+          }
+        ]
+      }
+    ]
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,6 +142,7 @@
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact" class="btn-primary">Book Audit</a>
             </nav>
             <button class="mobile-toggle" id="mobile-toggle">
@@ -92,7 +164,9 @@
                     </div>
                 </div>
                 <div class="hero-image-placeholder">
-                    <div class="img-frame" role="img" aria-label="Portrait of Joshua Tetteh" style="background-image: url('BCS04658.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="img-frame">
+                        <img src="BCS04658.jpg" alt="Portrait of Joshua Tetteh" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,25 +177,25 @@
                 <h2 class="section-title">Selected Projects</h2>
                 <div class="grid-2">
                     <div class="project-card">
-                        <div class="project-img" role="img" aria-label="Grant Intelligence System Dashboard Showcase" style="background-image: url('ghana_project_health_1781799730396.png'); background-size: cover; background-position: center;"></div>
+                        <img class="project-img" src="ghana_project_health_1781799730396.png" alt="Grant Intelligence System Dashboard Showcase" loading="lazy">
                         <span class="project-meta">01 / AI & Public Health</span>
                         <h3>Grant Intelligence System</h3>
                         <p class="project-desc">Automated grant identification and application assistance system for the Ghana Health Service and academic institutions to secure funding for their programs.</p>
                     </div>
                     <div class="project-card">
-                        <div class="project-img" role="img" aria-label="Digiits Agency AI Core Platform Mockup" style="background-image: url('ghana_project_b2b_1781799744905.png'); background-size: cover; background-position: center;"></div>
+                        <img class="project-img" src="ghana_project_b2b_1781799744905.png" alt="Digiits Agency AI Core Platform Mockup" loading="lazy">
                         <span class="project-meta">02 / B2B Automation</span>
                         <h3>Digiits Agency AI Core</h3>
                         <p class="project-desc">Engineered an AI-powered lead generation system and automated CRM that reduced proposal creation time and accelerated client response cycles.</p>
                     </div>
                     <div class="project-card">
-                        <div class="project-img" role="img" aria-label="ECG Digital Transformation Analytics Dashboard" style="background-image: url('ghana_project_enterprise_1781799756508.png'); background-size: cover; background-position: center;"></div>
+                        <img class="project-img" src="ghana_project_enterprise_1781799756508.png" alt="ECG Digital Transformation Analytics Dashboard" loading="lazy">
                         <span class="project-meta">03 / Enterprise Data</span>
                         <h3>ECG Digital Transformation</h3>
                         <p class="project-desc">Led the digitization of monitoring processes, developing dashboards and business manuals that reduced planning cycles from 3 months to 1 month.</p>
                     </div>
                     <div class="project-card">
-                        <div class="project-img" role="img" aria-label="HNWI System Data Integration Graph" style="background-image: url('ghana_project_financial_1781799768124.png'); background-size: cover; background-position: center;"></div>
+                        <img class="project-img" src="ghana_project_financial_1781799768124.png" alt="HNWI System Data Integration Graph" loading="lazy">
                         <span class="project-meta">04 / Financial Intelligence</span>
                         <h3>HNWI System</h3>
                         <p class="project-desc">Architected an advanced intelligence and data management system tailored for outreach to high net-worth individuals (HNWI).</p>
@@ -197,6 +271,30 @@
             </div>
         </section>
 
+        <!-- FAQ SECTION -->
+        <section id="faq" class="faq-section section-padding">
+            <div class="container">
+                <div class="faq-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Understanding AI, data engineering, and automation for Ghanaian enterprises.</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>What does an AI Consultant & Data Strategist actually do?</h3>
+                        <p>I design and implement custom data pipelines and automation systems that connect legacy databases (like BigQuery or SQL) to custom LLM and machine learning applications. This eliminates manual tasks like report drafting and data reconciliation, translating operational data into business metrics.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How can automated reporting reduce utility or planning cycles?</h3>
+                        <p>By automating the data collection, cleansing, and visualization processes using automated pipelines, planning cycles that traditionally take 3 months (like in ECG) are shortened to 1 month. Decisions are made using real-time dashboards rather than outdated spreadsheets.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is semantic memory and how does it benefit my business?</h3>
+                        <p>Semantic memory systems store organizational context, business manuals, and past proposal records in a vector database. This allows custom AI agents to retrieve information and assist with complex tasks (such as grant identification or proposal writing) with high accuracy and low drift.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CONTACT SECTION -->
         <section id="contact" class="contact-section section-padding bg-light-gray">
             <div class="container grid-2">
@@ -241,6 +339,7 @@
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-social">
