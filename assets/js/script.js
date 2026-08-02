@@ -151,4 +151,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Lightbox Modal Functionality for Project Images
+    const projectImages = document.querySelectorAll('.project-img');
+    
+    // Dynamically inject Lightbox DOM structure if not present
+    let lightbox = document.querySelector('.lightbox-modal');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.className = 'lightbox-modal';
+        lightbox.innerHTML = `
+            <span class="lightbox-close" aria-label="Close enlarged image">&times;</span>
+            <img class="lightbox-content" src="" alt="Enlarged Project Preview">
+            <div class="lightbox-caption"></div>
+        `;
+        document.body.appendChild(lightbox);
+    }
+
+    const lightboxImg = lightbox.querySelector('.lightbox-content');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    projectImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || 'Enlarged Image';
+            lightboxCaption.textContent = img.alt || '';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+
 });
+
