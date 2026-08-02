@@ -541,32 +541,127 @@ p {
 /* Responsive */
 @media (max-width: 1024px) {
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    .hero-grid { gap: 2rem; }
+    .hero-grid { gap: 2.5rem; }
+    .grid-2 { gap: 2.5rem; }
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+    
     .nav-links {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(249, 247, 243, 0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        gap: 1.25rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        pointer-events: none;
     }
+    
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-links a {
+        font-size: 1.05rem;
+        padding: 0.4rem 0;
+        width: 100%;
+    }
+
     .mobile-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        border-radius: 4px;
     }
+
     .hero-grid, .grid-3, .grid-4, .grid-2, .footer-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
+
     .hero-section {
-        padding: 6rem 0 3rem;
+        padding: 7.5rem 0 3rem;
+        min-height: auto;
     }
+
     .section-padding {
-        padding: 3rem 0;
+        padding: 3.5rem 0;
     }
+
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 6vw, 2.6rem);
     }
+
+    .hero-subtitle {
+        font-size: 1.05rem !important;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
     .btn-primary, .btn-secondary {
         min-height: 48px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
+
+    .service-card {
+        padding: 1.75rem 1.25rem !important;
+    }
+
+    .contact-form-container, .testimonial-box {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px; /* Prevents auto-zoom on mobile iOS Safari */
+    }
+
+    .footer-container {
+        gap: 2.5rem;
+    }
 }
+
+@media (max-width: 480px) {
+    .about-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.85rem;
+    }
+    
+    .section-title {
+        font-size: 1.65rem;
+    }
+}
+
